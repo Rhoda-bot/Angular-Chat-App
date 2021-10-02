@@ -1,0 +1,90 @@
+<!-- 
+
+  <div class="row mx-auto">
+    <div class="col-5 border-right pt-5">
+      <form class="animate__animated animate__fadeInLeft "  [formGroup]="userForm">
+        <div class="card-title text-center">
+          <h3>sign-up</h3>
+          </div>
+          <p class="clear-fix"></p>
+        <div class="div">
+          <input type="text" name="firstname" class="form-control" placeholder="First name" formControlName="fName">
+        </div>
+        <p class="clear-fix"></p>
+        <div class="div">
+          <input  name="lastname" type="text" class="form-control" placeholder="Last name" formControlName="lName">
+        </div>
+        <p class="clear-fix"></p>
+        <div class="">
+          <input name="email" type="text" class="form-control" placeholder="Email" formControlName="email">
+       </div>
+       <p class="clear-fix"></p>
+        <div class="">
+        <input name="phone" type="text" class="form-control" placeholder="Phone No" formControlName="phone">
+      </div>
+      <p class="clear-fix"></p>
+      <div class="">
+        <input  name="password"type="password" class="form-control" placeholder="Password" formControlName="password">
+      </div>
+      <p class="clear-fix"></p>
+      <div class="row">
+          <div class="col-12">
+            <button class="btn btn-block " (click)="submitForm()" [style.display]="!userForm?'none':'block'">submit</button>
+          </div>
+      </div>
+      <div >
+        <p>if sign in kindly click the link to <a routerLink="/sign-in">sign in here</a></p>
+      </div>
+      </form>
+    </div>
+    <div class="col-6 pt-5 border-bottom">
+      <img src="../../assets/chat-pages-link.png" alt="" class="" width="100%" height="440px" srcset="">
+      <div class="middle">
+        <div class="text">Sign Up</div>
+      </div>
+    </div>
+  </div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 pt-4 border-right ">
+      <div class="card">
+        <h3 class="text-center border-bottom">Sign UP</h3>
+        <form (submit)="submitForm()" class="animate__animated animate__fadeInLeft "  [formGroup]="userForm">
+         <div>
+          <input type="text" class="form-control" formControlName="fName" placeholder="First Name">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+          <input type="text" class="form-control" formControlName="lName" placeholder="Last Name">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+          <input type="email" class="form-control" formControlName="email" placeholder="Email Address">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+          <input type="text" class="form-control" formControlName="phone" placeholder="Phone No:." >
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+           <button type="submit" class="btn btn-dark btn-block" [style.display]="userForm?'block':'none'">sign up</button>
+         </div>
+        </form>
+        <div class="card-footer">
+          <div class="text-center">
+            <p>If  signed Up please kindly sign inhere<a routerLink="/sign-in">sign in here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <img src="../../assets/chat-pages-link.png" class="img-fluid" alt="">
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+.row{
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+}
+.col-8{
+    background-image: url("../../assets/dd.jfif");
+    /* background-repeat: no-repeat; */
+}
+h3{
+    color: grey;
+}

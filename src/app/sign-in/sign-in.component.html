@@ -1,0 +1,35 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 pt-3 border-right">
+      
+      <div class="card">
+        <h3 class="text-center border-bottom">Sign IN</h3>
+        <form  (submit)="loginUser()" [formGroup]="loginForm"  class="animate__animated animate__fadeInRight ">
+         <div>
+          <input type="email" class="form-control" formControlName="email" placeholder="Email">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+         </div>
+         <p class="clear-fix"></p>
+         <div>
+           <button type="submit" class="btn btn-dark btn-block">login</button>
+         </div>
+        </form>
+        <div class="card-footer">
+          <div class="text-center">
+            <p>If not signed Up please kindly sign up here<a routerLink="/sign-up">sign up here</a></p>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div class="col-6 pt-3 animate__animated animate__fadeInDown">
+     <form >
+       <img src="../../assets/chat-pages-link.png" class="img-fluid h-50px" alt="">
+     </form>
+    </div>
+  </div>
+</div>

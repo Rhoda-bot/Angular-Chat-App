@@ -1,0 +1,29 @@
+    this.arrMessages.push(this.message);
+    let allUser = this._chat_service.getAllusers;
+    let index_Of_chatpart =allUser.indexOf(this.chat_Partner)
+    let index_Of_Logged_User=allUser.indexOf(this.user_info)
+    if(this.chat_Partner.messages[0].id==this.user_info.id && this.chat_Partner.senderMsg!=""){
+      this.chat_Partner.messages[0].senderMsg=[...this.arrMessages]
+      allUser[index_Of_chatpart]=this.chat_Partner;
+      if (this.user_info.messages[0].id==this.chat_Partner.id) {
+        this.user_info.messages[0].receiverMgs=[...this.arrMessages]
+        allUser[index_Of_Logged_User]=this.user_info
+      }
+      console.log(this.user_info);
+      console.log(this.chat_Partner);
+      
+      // localStorage.setItem("Register-users",JSON.stringify(allUser));
+        
+        
+    }else if (this.chat_Partner.messages=="") {
+     console.log(this.chat_Partner);
+     
+      
+    }
+    // else if(this){
+    //   console.log("invalid");
+      
+    // }
+  //   if (this.user_info.messages[0].id==this.chat_Partner.id) {
+  //     this.user_info.messages[0].receiverMgs=[...this.arrMessages]
+  // }

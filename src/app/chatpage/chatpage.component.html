@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div class="container animate__animated animate__backInDown">
+    <div class="row">
+        <div class="col-4 border-right">
+            <h2>users</h2>
+            <input type="text" class="form-control pt-3 pb-3" placeholder="search..."[(ngModel)]="searchbox"  (keyup)="search()"><br>
+            <i class="bi bi-plus" style="height: 3rem;" >create group</i>
+            <div *ngFor="let otherUsers of other_users" class="border-bottom border-top">
+                <img src="../../assets/images.png" alt="" style="border-radius: 50px;" width="50px" height="50px" class="avatar">
+                <span (click)="view(otherUsers.id)"> {{otherUsers.fName}} {{otherUsers.lName}}</span>
+            </div>
+        </div>
+        <div class="col-8">
+            
+            
+            <h4 class="text-center">messages</h4><i class="bi bi-grip-vertical"></i>
+            
+            
+            <img src="../../assets/avatar2.png" alt="" style="border-radius: 50px;" width="50px" height="50px" class="avatar border-bottom" [style.display]="chat_Partner==''?'none':'block'"> 
+            <div class="card-title mx-auto "> <h3>{{chat_Partner.fName}} {{chat_Partner.lName}}</h3></div>
+            <div class="float-left clear-fix" >
+                <!-- <p>{{chat_Partne}}</p><br> -->
+            </div>
+            <div *ngFor="let messages of currentMessages">
+                <div [style]="messages.id===user_info.id?{color:'black',float:'right'}:{color:'blue',float:'left'}" >
+                   <div [class]="messages.id===user_id ?'alert alert-success float-left':'alert alert-light float-right' ">
+                   <p> {{messages.message}}</p><br>
+                   </div>
+                </div>
+                <!-- <p class="mt-1  alert-success" [style]="messages.id===user_id?{color:'red',float:'right'}:{color:'green',float:'left'}">{{messages.message}}<br></p> -->
+              </div>
+              <!-- <div *ngFor="let msg of allReceiverMessages">
+                    {{mgs.message}}
+              </div> -->
+           <div class="" style="padding-top: 300px;">
+            <input type="text" placeholder="message" class="form-control mb-3" [(ngModel)]="message" (keyup.enter)="chat()">
+            <button class="btn btn-success float-right" (click)="chat()">send</button>
+           </div>
+           
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

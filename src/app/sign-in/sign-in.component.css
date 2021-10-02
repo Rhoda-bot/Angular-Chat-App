@@ -1,0 +1,17 @@
+.row{
+  padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+}
+form{
+    background: white;
+    /* width: 40%; */
+    padding: 20px;
+    box-shadow: 12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+      -12px -12px 24px 0 rgba(235, 232, 232, 0.932);
+  
+    box-sizing: border-box;
+    max-height: 500px;
+    /* border-radius: 0px 20px 0px 20px; */
+}
